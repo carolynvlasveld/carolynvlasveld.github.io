@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: #D1D1D1;
 		font-family: Arial;
 		font-size: 16pt;
 		font-weight: 400;
@@ -111,13 +111,13 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #f6f3ee;
+		color: #72E7EB;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #f6f3ee !important;
+			color: #72E7EB !important;
 			text-decoration: none;
 		}
 
@@ -1895,7 +1895,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #a2a2a2;
+			color: #D1D1D1;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
