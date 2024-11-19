@@ -73,21 +73,20 @@
 						<br>
 
 
-
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Markdown from GitHub</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Embed Markdown</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
     <style>
         /* Optional: Add some basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        #content {
+        .markdown {
             border: 1px solid #ccc;
             padding: 10px;
             border-radius: 5px;
@@ -96,31 +95,23 @@
     </style>
 </head>
 <body>
-    <h1>Markdown Content from GitHub</h1>
-    <div id="content"></div>
 
-    <script>
-        // Raw URL of the Markdown file
-        const markdownUrl = 'https://raw.githubusercontent.com/carolynvlasveld/notesandresources/cfff4287006218874572865a027feebfcf3bb64f/README.md';
+<div id="markdown-content" class="markdown"></div>
 
-        fetch(markdownUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(markdown => {
-                document.getElementById('content').innerHTML = marked(markdown);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    </script>
+<script>
+    async function fetchMarkdown() {
+        const url = 'https://raw.githubusercontent.com/carolynvlasveld/notesandresources/main/README.md';
+        const response = await fetch(url);
+        const markdown = await response.text();
+        const html = marked(markdown);
+        document.getElementById('markdown-content').innerHTML = html;
+    }
+
+    fetchMarkdown();
+</script>
+
 </body>
 </html>
-					
-
 
 
 
