@@ -74,7 +74,52 @@
 
 
 
-						
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Markdown from GitHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Markdown Content from GitHub</h1>
+    <div id="content"></div>
+
+    <script>
+        // Raw URL of the Markdown file
+        const markdownUrl = 'https://raw.githubusercontent.com/carolynvlasveld/notesandresources/cfff4287006218874572865a027feebfcf3bb64f/README.md';
+
+        fetch(markdownUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(markdown => {
+                document.getElementById('content').innerHTML = marked(markdown);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+</body>
+</html>
+					
 
 
 
