@@ -1,0 +1,153 @@
+html {
+	background-color: #292c31; /* polardarkgrey */
+}
+
+header {
+  font-size: 23px;
+  grid-area: header;
+  justify-self: left;
+  align-self: end;
+}
+
+header a:hover > i {
+	color: #8fbcbb; /* greenfrost */
+	text-decoration: underline;
+}
+
+
+body {
+  max-width: 650px;
+  margin: 0 auto;
+  min-width: 0;
+  padding: 45px 25px 25px 25px;
+
+  font-family: "Arial", san-serif;
+  word-spacing: 0.1em;
+  line-height: 1.5;
+
+  color: #909ab0; /* polarnight */
+  background-color: #1E1E1E; /* darkdarkgrey */
+
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas:
+    "header"
+	"nav"
+    "ct"
+}
+
+.tagline {
+  font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+p {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+nav {
+  font-size: 18px;
+  grid-area: nav;
+  justify-self: right;
+  align-self: end;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-align: right;
+}
+
+article {
+  font-size: 16px;
+  grid-area: ct;
+  border-top: 2px dotted #4c566a;
+  border-bottom: 2px dotted #4c566a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+
+article.pages {
+  padding-bottom: 95px;
+
+}
+
+a {
+  color: #d8dee9; /* whiteice */
+  text-decoration: none;
+}
+
+a:hover, h1, h2, h3 {
+    color: #8fbcbb; /* greenfrost */
+}
+
+
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 23px;
+}
+h3 {
+  font-size: 16px;
+}
+
+b, i {
+  color: #caced8; /* polarlight */
+}
+
+pre {
+    background-color: #2e3440;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+	margin: 15px;
+	margin-bottom: 35px;
+	margin-top: 35px;
+
+}
+code {
+    font-family: monospace;
+    background-color: #2e3440;
+    border-radius: 5px;
+    padding: 1px;
+	font-size: 14px;
+}
+
+footer {
+  color: #4c566a;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 430px) {
+  body {
+    grid-template-columns: auto;
+    grid-template-rows: minmax(40px,auto) minmax(30px,auto) auto;
+  }
+  header, nav {
+    justify-self: center;
+    text-align: center;
+  }
+  nav a {
+    margin: 5px;
+	color: #8fbcbb; /* greenfrost */
+  }
+}
+
+
